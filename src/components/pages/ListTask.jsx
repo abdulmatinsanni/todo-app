@@ -1,24 +1,18 @@
 import { Fragment } from "react";
-import { useDispatch } from "react-redux";
-import { showNotification } from "state/actions/notification";
+import { Link } from "react-router-dom";
 
 const ListTask = () => {
-  const dispatch = useDispatch();
-
   return (
     <Fragment>
       <div className="flex flex-row justify-between items-center">
         <h1 className="font-medium text-2xl">Tasks Board</h1>
 
-        <button
-          type="button"
+        <Link
+          to="/create"
           className="inline-flex items-center bg-blue-500 text-base text-white font-normal py-2 px-5 rounded-md hover:bg-blue-600 focus:outline-none transition ease-in-out duration-300"
-          onClick={() =>
-            dispatch(showNotification({ message: "Add new task!" }))
-          }
         >
           Add new task
-        </button>
+        </Link>
       </div>
 
       <div className="mt-5">

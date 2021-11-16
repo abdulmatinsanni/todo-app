@@ -49,12 +49,12 @@ const ListTask = () => {
                 </div>
 
                 <div className="flex flex-row justify-center items-center space-x-2">
-                  <button
-                    type="button"
+                  <Link
+                    to={`/edit/${item}`}
                     class="inline-flex justify-center items-center rounded-md border border-gray-200 shadow-sm h-7 w-7 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 focus:outline-none"
                   >
                     <FiEdit />
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

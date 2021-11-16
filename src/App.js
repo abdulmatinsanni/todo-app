@@ -5,6 +5,7 @@ import store from "state/store";
 import Error404 from "components/pages/Error404";
 import CreateTask from "components/pages/CreateTask";
 import ListTask from "components/pages/ListTask";
+import EditTask from "components/pages/EditTask";
 
 const App = () => (
   <StoreProvider store={store}>
@@ -14,6 +15,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<ListTask />} />;
             <Route path="/create" element={<CreateTask />} />
+            <Route path="/edit/:id" element={<EditTask />} />
             <Route element={<Error404 />} />
           </Routes>
         </div>

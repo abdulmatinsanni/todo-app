@@ -9,11 +9,15 @@ import ListTask from "components/pages/ListTask";
 const App = () => (
   <StoreProvider store={store}>
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<ListTask />} />;
-        <Route path="/create" element={<CreateTask />} />
-        <Route element={<Error404 />} />
-      </Routes>
+      <div className="flex flex-row justify-center min-h-screen p-10 bg-gray-100">
+        <div className="flex flex-col justify-start w-1/2">
+          <Routes>
+            <Route path="/" element={<ListTask />} />;
+            <Route path="/create" element={<CreateTask />} />
+            <Route element={<Error404 />} />
+          </Routes>
+        </div>
+      </div>
     </BrowserRouter>
   </StoreProvider>
 );

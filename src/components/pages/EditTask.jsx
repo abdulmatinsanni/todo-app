@@ -42,7 +42,7 @@ const EditTask = () => {
       <div className="flex flex-row justify-between items-center">
         <div className="flex flex-row space-x-3 font-medium text-base">
           <Link
-            to="/"
+            to="/tasks"
             className="text-gray-500 hover:text-gray-400 transition ease-in-out duration-300"
           >
             Tasks

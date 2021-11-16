@@ -14,7 +14,7 @@ const ListTask = () => {
       <div className="mt-10">
         <div className="bg-white p-4 roundedshadow-sm">
           <Link
-            to="/create"
+            to="/tasks/create"
             className="flex flex-row justify-center items-center text-gray-300 hover:text-gray-400 space-x-2 p-4 border-2 border-gray-100 hover:border-gray-200 border-dashed rounded transition ease-in-out duration-300"
           >
             <FiPlus className="text-xl" />
@@ -50,7 +50,7 @@ const ListTask = () => {
 
                 <div className="flex flex-row justify-center items-center space-x-2">
                   <Link
-                    to={`/edit/${item}`}
+                    to={`/tasks/edit/${item}`}
                     class="inline-flex justify-center items-center rounded-md border border-gray-200 shadow-sm h-7 w-7 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 focus:outline-none"
                   >
                     <FiEdit />

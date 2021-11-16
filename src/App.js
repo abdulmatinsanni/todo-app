@@ -6,6 +6,8 @@ import Error404 from "components/pages/Error404";
 import CreateTask from "components/pages/CreateTask";
 import ListTask from "components/pages/ListTask";
 import EditTask from "components/pages/EditTask";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => (
   <StoreProvider store={store}>
@@ -21,6 +23,14 @@ const App = () => (
           </Routes>
         </div>
       </div>
+
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={true}
+        newestOnTop={false}
+        toastClassName="px-5 shadow-sm rounded-md text-sm"
+      />
     </BrowserRouter>
   </StoreProvider>
 );

@@ -1,10 +1,24 @@
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import { FiPlus, FiEdit } from "react-icons/fi";
+import { useDispatch } from "react-redux";
+import { showNotification } from "state/actions/notification";
 
 const ListTask = () => {
+  const dispatch = useDispatch();
+
   return (
     <Fragment>
+      <button
+        type="button"
+        className="bg-blue-400"
+        onClick={() =>
+          dispatch(showNotification("Test notification message triggered"))
+        }
+      >
+        TEST NOTIFICATION
+      </button>
+
       <div className="flex flex-row justify-between items-center">
         <div className="flex flex-row space-x-3 font-medium text-base">
           <span className="text-gray-500 ">Tasks</span>

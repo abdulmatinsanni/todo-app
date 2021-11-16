@@ -4,7 +4,9 @@ import TextInput from "components/shared/forms/TextInput";
 import { Field, Form, Formik } from "formik";
 import produce from "immer";
 import { Fragment, useState } from "react";
+import { Link } from "react-router-dom";
 import * as yup from "yup";
+import { FiCheck } from "react-icons/fi";
 
 const CreateTask = () => {
   const [state, setState] = useState({
@@ -38,10 +40,19 @@ const CreateTask = () => {
   return (
     <Fragment>
       <div className="flex flex-row justify-between items-center">
-        <h1 className="font-medium text-2xl">Create new task</h1>
+        <div className="flex flex-row space-x-3 font-medium text-base">
+          <Link
+            to="/"
+            className="text-gray-500 hover:text-gray-400 transition ease-in-out duration-300"
+          >
+            Tasks
+          </Link>
+          <span className="text-gray-400">/</span>
+          <span className="text-gray-400">Create a task</span>
+        </div>
       </div>
 
-      <div className="mt-5">
+      <div className="mt-10">
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
@@ -75,8 +86,12 @@ const CreateTask = () => {
                     className="inline-flex items-center bg-blue-500 text-base text-white font-normal py-2 px-5 rounded-md hover:bg-blue-600 focus:outline-none transition ease-in-out duration-300"
                     disabled={!isValid}
                   >
-                    {state.isSubmitting && <ButtonSpinnerSvg />}
-                    Create task
+                    {!state.isSubmitting ? (
+                      <FiCheck className="text-xl" />
+                    ) : (
+                      <ButtonSpinnerSvg />
+                    )}
+                    <span className="ml-2">Create task</span>
                   </button>
                 </div>
               </Form>
